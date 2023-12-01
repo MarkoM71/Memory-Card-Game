@@ -26,6 +26,6 @@ The user selects the second card, by clicking on it.  The card turns over. Both 
 This process continues, until the screen is empty after all the cars disappear.  A You win! statement appears on the screen.  An accuracy, amount is rendered in percentage.  This calculates the amount amount of moves you got correct.  
 
 -STEP FIVE
-There is a play again button, which resets the board, and the statistics of moves, misses, and accuracy.
+There is a play again button, which resets the board, and the statistics of moves, misses, and accuracy.  You can press the play again button to reset the board and the statistics at anytime.  
 
 

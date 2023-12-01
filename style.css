@@ -11,3 +11,31 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 170px);
+    grid-template-rows: repeat(3, 150px);
+    background-color: lightgrey;
+    
+}
+
+.square {
+    width: 170px;
+    height: 150px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+
+}
+
+.results {
+    background-color: lightgreen;
+    width: 680px;
+    height: 100px;
+    margin-top: 5px;
+}
+
+

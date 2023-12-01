@@ -59,17 +59,6 @@ Create your own table using this markdown table generator website: https://www.t
 
 Do not neglect to plan, you will thank yourself later for being proactive! -->
 
-Day		        Task	                           Blockers	Notes/ Thoughts
-	
-		
-Sunday		    Add functionality		
-Monday		    Add styling		
-Tuesday		    Finalize MVP		
-Wednesday		Work on stretch goals		
-Thursday		Work on icebox items if applicable		
-Friday		    Presentation Day!		
-
-
 Friday:
 Create and present proposal.  Create html, js, css files.
 

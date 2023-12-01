@@ -8,6 +8,12 @@ My app is called Memory Card.  It's a game for an individual who wants to play a
 
 They game keeps track of how many moves you make.  One move is considered when you turn over 2 cards.   The game keeps track of how many misses you make.  Misses are considered when you turn over 2 cards and no matches occur.  After you win the game.  Your move accuracy is calculated.  The screen announces you Win.  And you there is a play again button.
 
+Possibly to think about 6 random pairs of objects.  
+Or make it themed based, sports themes: (soccer ball, basketball, football, baseball, tennis ball, golf ball)
+Game based themes: 6 cyberpunk characters.  6 streetfighers characters.
+
+
+
 WIRE FRAMES
 
 INITIAL LANDING VIEW   
@@ -35,7 +41,8 @@ As a player, I want the computer to give me functionality to play again.
 -STRETCH GOALS
 As a player, I'd like to see sounds made in turning the cards over.  
 As a player, I'd like to hear sounds when there a match is made like a ring.
-As a player, I'd like to see a victory animation such as confetti, so I feel good about my vicotry.  
+As a player, I'd like to see a victory animation such as confetti, so I feel good about my victory.  
+As a player, I'd like to see card flip animation.
 As a player, I'd like a lose state, meaning if I don't get the matches in a certain amount of time.  I lose the game.
 As a player, I'd like to be to be able to have a choice to play a 16 card game.
 
@@ -53,13 +60,36 @@ Create your own table using this markdown table generator website: https://www.t
 Do not neglect to plan, you will thank yourself later for being proactive! -->
 
 Day		        Task	                           Blockers	Notes/ Thoughts
-Friday		    Create and present proposal		 
-Friday		    Create html, js, css files		
-Saturday		Create basic scaffolding		
+	
+		
 Sunday		    Add functionality		
 Monday		    Add styling		
 Tuesday		    Finalize MVP		
-Wedenesday		Work on stretch goals		
+Wednesday		Work on stretch goals		
 Thursday		Work on icebox items if applicable		
 Friday		    Presentation Day!		
 
+
+Friday:
+Create and present proposal.  Create html, js, css files.
+
+Saturday:
+Create basic scaffolding
+
+Sunday:
+Add functionality
+
+Monday:
+Add styling
+
+Tuesday:
+Finalize MVP
+
+Wednesday:
+Work on stretch goals
+
+Thursday:
+Work on icebox items if applicable
+
+Friday:
+Presentation Day!

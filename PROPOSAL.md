@@ -1,6 +1,6 @@
-Project Choice
+PROJECT CHOICE
 
-<!-- Memory Card Game -->
+Memory Card Game
 
 
 Project Description

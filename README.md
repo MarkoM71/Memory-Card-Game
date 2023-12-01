@@ -12,9 +12,12 @@ The user selects one card, by clicking on it.  The card turns over, and stays th
 
 
 STEP THREE
-The user selects the second card, by clicking on it.  The card turns over. 
+The user selects the second card, by clicking on it.  The card turns over. Both cards should stay turned over for a second so the user processes whether it's a match or a miss.  
     If it matches the 1st card.  Both Cards disappear from the screen.  Moves is updated to 1.  
     If it doesn't match, both cards turn back facedown.  Moves is updated to 1.  And misses is updated to One.
 
 STEP FOUR
 This process continues, until the screen is empty after all the cars disappear.  A You win! statement appears on the screen.  An accuracy, amount is rendered in percentage.  This calculates the amount amount of moves you got correct.  
+
+STEP FIVE
+There is a play again button, which resets the board, and the statistics of moves, misses, and accuracy.

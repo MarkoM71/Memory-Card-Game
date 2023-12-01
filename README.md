@@ -1,1 +1,4 @@
 # Memory-Card-Game
+
+
+PSEUDOCODE

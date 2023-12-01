@@ -6,11 +6,14 @@ PSEUDOCODE
 -STEP ONE
 A Board is rendered, with the cards turned over.  There are 12 Cards.
     There are 6 items items.  The computer goes through the array of items and randonmly populates 2 areas of the board with the same item.  
+    
+    The first item it utilizes, a function randomly chooses one of the squares in the board, then it randomly chooses the 2nd square for the item among the remaining squares.
 
+    //Can I store the pictures of items in the variables, then the variables in an array, then radomly select squares
 
 -STEP TWO
 The user selects one card, by clicking on it.  The card turns over, and stays that way.
-    Handle Clicks are on each card, which reveal the item under that card.  
+    Handle Clicks are on each card, which reveal the item under that card.  The Handle Click makes it display the image under the card.  The default is the backside.  Same back side used for all the cards.
 
 
 -STEP THREE

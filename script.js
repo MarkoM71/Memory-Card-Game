@@ -23,15 +23,13 @@ function shuffleArray(array) {
 const randomlyPopulatedArray = shuffleArray([...sportsArray]);
 
 
-squareEls.forEach(function (squareEl) {
-    squareEl.addEventListener('click', handleClick);
+squareEls.forEach(function (squareEl, index) {
+    squareEl.addEventListener('click', function () {
+        handleClick(index);
+    });
 });
 
-function handleClick(event) {
-    for (let i = 0; i < randomlyPopulatedArray.length; i++) {
-        event.target.textContent = randomlyPopulatedArray[i];
-        
-    }
+function handleClick(index) {
+    squareEls[index].textContent = randomlyPopulatedArray[index];
 }
 
-// console.log(randomlyPopulatedArray);

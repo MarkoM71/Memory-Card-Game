@@ -17,13 +17,22 @@ const accuracyEl = document.querySelector('#accuracy-num')
 
 let randomlyPopulatedArray = []
 let selectedSquares = [];
-let matchedPairs = 0;
-let moves = 0;
-let misses = 0;
-let accuracy = 0;
-let gameWon = false;
+let matchedPairs;
+let moves;
+let misses;
+let accuracy;
+let gameWon;
 
+function startGame() {
+    matchedPairs = 0;
+    moves = 0;
+    misses = 0;
+    accuracy = 0;
+    gameWon = false;
+    randomlyPopulatedArray = shuffleArray([...sportsArray]);
+}
 
+startGame();
 
 // The Fisher-Yates Shuffle Algorithm
 function shuffleArray(array) {
@@ -33,8 +42,6 @@ function shuffleArray(array) {
   }
   return array;
 }
-
-randomlyPopulatedArray = shuffleArray([...sportsArray]);
 
 
 squareEls.forEach(function (squareEl, index) {

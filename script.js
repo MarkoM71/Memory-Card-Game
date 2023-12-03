@@ -1,5 +1,3 @@
-const squareEls = document.querySelectorAll(".square");
-
 const soccerBall = '⚽️';
 const basketBall = '🏀';
 const tennisBall = '🎾';
@@ -11,6 +9,8 @@ const sportsArray = [soccerBall, soccerBall, baseball, baseball,
     tennisBall, tennisBall, football, football,
     basketBall, basketBall, golf, golf];
 
+const boardEl = document.querySelector('#board');
+const squareEls = document.querySelectorAll(".square");
 const movesEl = document.querySelector('#moves-num');
 const missesEl = document.querySelector('#misses-num');
 const accuracyEl = document.querySelector('#accuracy-num')
@@ -54,9 +54,9 @@ function handleClick(index) {
 
             if (content1 === content2) {
                 matchedPairs++;
-                console.log(matchedPairs);
-                // squareEls[index1].style.background = 'white';
-                // squareEls[index2].style.background = 'white';
+                squareEls[index1].remove();
+                squareEls[index2].remove();
+
             } else {
                 setTimeout(() => {
                     squareEls[index1].textContent = '';
@@ -96,6 +96,8 @@ function checkAccuracy() {
 }
 
 
+
+
 // squaresMatch(content1, content2);
 // function squaresMatch(square1, square2) {
 //     if (square1 === square2) {
@@ -107,3 +109,10 @@ function checkAccuracy() {
 //         }, 1000);
 //     }
 // }
+
+
+// squareEls[index1].style.backgroundColor = "white";
+//                 squareEls[index2].style.backgroundColor = "white";
+//                 squareEls[index1].remove()
+//                 boardEl.removeChild(squareEls[index1]);
+//                 boardEl.remove(squareEls[index2]);

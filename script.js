@@ -117,9 +117,8 @@ function checkAccuracy() {
 }
 
 function winMessage() { 
-    boardEl.style.display = 'flex';
-    boardEl.classList.toggle('hidden');
-    // boardEl.classList.add('winning-message');
+    boardEl.classList.remove('grid-board')
+    boardEl.classList.add('winning-message');
     boardEl.textContent = "You Won!";
 
 }   
@@ -135,6 +134,15 @@ playAgainBtnEl.addEventListener('click', function () {
     startGame(); 
 });
 
+
+//THIS WIN MESSAGE WORKS
+// function winMessage() { 
+//     boardEl.style.display = 'flex';
+//     boardEl.classList.toggle('hidden');
+    // boardEl.classList.add('winning-message');
+//     boardEl.textContent = "You Won!";
+
+// }   
 
     // boardEl.style.justifyContent = 'center';
     // boardEl.style.alignItems = 'center';

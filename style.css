@@ -14,15 +14,16 @@ body {
 }
 
 #board {
+    background-color: white;
+    
+}
+
+.grid-board {
     display: grid;
     grid-template-columns: repeat(4, 170px);
     grid-template-rows: repeat(3, 150px);
-    /* width: 700px;
-    height: 450px; */
-    background-color: white;
     gap: 3px;
     border: 1px solid black;
-    
 }
 
 .square {
@@ -75,18 +76,18 @@ button {
     border-radius: 5px;
 }
 
-/* .winning-message {
+.winning-message {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 70px;
     height: 450px;
     width: 700px;
-} */
+}
 
-.hidden {
-    /* display: none; */
-    /* display: flex; */
+/* .hidden {
+    display: none; */ 
+    /* display: flex;
     justify-content: center;
     align-items: center;
     font-size: 70px;

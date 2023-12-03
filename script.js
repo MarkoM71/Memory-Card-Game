@@ -33,6 +33,10 @@ function startGame() {
     accuracy = 0;
     gameWon = false;
     randomlyPopulatedArray = shuffleArray([...sportsArray]);
+
+    movesEl.textContent = '0';
+    missesEl.textContent = '0';
+    accuracyEl.textContent = '0%';
 }
 
 startGame();

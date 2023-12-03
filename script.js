@@ -13,7 +13,10 @@ const boardEl = document.querySelector('#board');
 const squareEls = document.querySelectorAll(".square");
 const movesEl = document.querySelector('#moves-num');
 const missesEl = document.querySelector('#misses-num');
-const accuracyEl = document.querySelector('#accuracy-num')
+const accuracyEl = document.querySelector('#accuracy-num');
+const playAgainBtnEl = document.querySelector('button')
+
+
 
 let randomlyPopulatedArray = []
 let selectedSquares = [];
@@ -110,22 +113,49 @@ function checkAccuracy() {
 }
 
 function winMessage() { 
-    squareEls.forEach(function (squareEl) {
-    squareEl.style.display = 'none'
-    })
-    
-    boardEl.textContent = "You Won!";
     boardEl.style.display = 'flex';
-    boardEl.style.justifyContent = 'center';
-    boardEl.style.alignItems = 'center';
-    boardEl.style.fontSize = '60px';
-    boardEl.style.height = '450px';
-    boardEl.style.width = '700px';
-}
+    boardEl.classList.toggle('hidden');
+    // boardEl.classList.add('winning-message');
+    boardEl.textContent = "You Won!";
+
+}   
+
+playAgainBtnEl.addEventListener('click', function () {
+    boardEl.textContent = ''; 
+    boardEl.style.display = 'grid';
+    boardEl.classList.toggle('hidden');
+    squareEls.forEach(squareEl => {
+        squareEl.style.visibility = 'visible';
+        squareEl.textContent = ''; 
+    });
+    startGame(); 
+});
+
+
+    // boardEl.style.justifyContent = 'center';
+    // boardEl.style.alignItems = 'center';
+    // boardEl.style.fontSize = '60px';
+    // boardEl.style.height = '450px';
+    // boardEl.style.width = '700px';
 
 
 
+// squareEls.forEach(function (squareEl) {
+    // squareEl.style.display = 'none'
+    // })
 
+// playAgainBtnEl.addEventListener('click', function () {
+//     boardEl.textContent = ''; 
+//     squareEls.forEach(squareEl => {
+//         squareEl.style.display = 'flex';
+//         squareEl.style.visibility = 'visible';
+//         squareEl.textContent = ''; 
+//     });
+//     startGame(); 
+// });
+
+
+// playAgainBtnEl.addEventListener('click', startGame);
 
 // boardEl.classList.add('winning-message');
 

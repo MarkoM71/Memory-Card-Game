@@ -10,13 +10,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(137, 131, 131);
 }
 
 #board {
     display: grid;
     grid-template-columns: repeat(4, 170px);
     grid-template-rows: repeat(3, 150px);
-    background-color: lightgrey;
+    /* width: 700px;
+    height: 450px; */
+    background-color: white;
+    gap: 3px;
+    border: 1px solid black;
     
 }
 
@@ -28,6 +33,8 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 90px;
+    background-color: lightgrey;
+    
 
 }
 
@@ -67,3 +74,17 @@ button {
     font-size: 25px;
     border-radius: 5px;
 }
+
+/* .winning-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    height: 450px;
+    width: 700px;
+} */
+
+
+/* position: absolute;
+    width: 100%;
+    height: 100%; */

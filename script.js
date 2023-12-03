@@ -23,6 +23,8 @@ let misses = 0;
 let accuracy = 0;
 let gameWon = false;
 
+
+
 // The Fisher-Yates Shuffle Algorithm
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -54,14 +56,18 @@ function handleClick(index) {
 
             if (content1 === content2) {
                 matchedPairs++;
-                squareEls[index1].remove();
-                squareEls[index2].remove();
+                squareEls[index1].style.backgroundColor = 'yellow';
+                squareEls[index2].style.backgroundColor = 'yellow';
+                setTimeout(() => {
+                    squareEls[index1].style.visibility = 'hidden';
+                    squareEls[index2].style.visibility = 'hidden';
+                }, 1000);
 
             } else {
                 setTimeout(() => {
                     squareEls[index1].textContent = '';
                     squareEls[index2].textContent = '';
-                }, 1000);
+                }, 1250);
                 addMisses();
             }
 
@@ -75,6 +81,7 @@ function checkWin() {
     if (matchedPairs === 6) {
         gameWon = true;
         checkAccuracy();
+        winMessage();
     } else {
         gameWon = false;
     }
@@ -95,7 +102,31 @@ function checkAccuracy() {
     accuracyEl.textContent = `${accuracy}%`
 }
 
+function winMessage() { 
+    squareEls.forEach(function (squareEl) {
+    squareEl.style.display = 'none'
+    })
+    
+    boardEl.textContent = "You Won!";
+    boardEl.style.display = 'flex';
+    boardEl.style.justifyContent = 'center';
+    boardEl.style.alignItems = 'center';
+    boardEl.style.fontSize = '60px';
+    boardEl.style.height = '450px';
+    boardEl.style.width = '700px';
+}
 
+
+
+
+
+// boardEl.classList.add('winning-message');
+
+// boardEl.style.display = 'none'
+
+// squareEl.remove();
+// squareEls[index1].remove();
+// squareEls[index2].remove();
 
 
 // squaresMatch(content1, content2);

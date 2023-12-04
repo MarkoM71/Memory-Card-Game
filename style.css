@@ -35,14 +35,12 @@ body {
     align-items: center;
     font-size: 90px;
     background-color: lightgrey;
-    
-
 }
 
 .results {
     background-color: rgb(241, 239, 239);
-    width: 680px;
-    height: 140px;
+    width: 692px;
+    height: 130px;
     margin-top: 5px;
     border: 1px solid black;
     padding-top: 10px;
@@ -52,7 +50,9 @@ body {
 .top-results {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 150px;
+    padding-left: 27px;
 }
 
 .moves, .misses, .accuracy {
@@ -68,11 +68,16 @@ body {
     justify-content: center;
     height: 70px;
     align-items: center;
+    padding-bottom: 10px;
 }
 
 button {
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 5px;
+    background-color: blue;
+    color: white;
+    height: 40px;
+    width: 120px;
 }
 
 .winning-message {
@@ -84,6 +89,9 @@ button {
     width: 700px;
 }
 
+.accuracy {
+    
+}
 
 
 

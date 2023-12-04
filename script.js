@@ -21,7 +21,7 @@ let matchedPairs;
 let moves;
 let misses;
 let accuracy;
-let gameWon;
+let gameFinish;
 
 function startGame() {
     randomlyPopulatedArray = []
@@ -30,7 +30,7 @@ function startGame() {
     moves = 0;
     misses = 0;
     accuracy = 0;
-    gameWon = false;
+    gameFinish = false;
     movesEl.textContent = '0';
     missesEl.textContent = '0';
     accuracyEl.textContent = '0%';
@@ -53,7 +53,7 @@ function startGame() {
     
     function handleClick(index) {
     console.log(squareEls);
-    if (selectedSquares.length < 2 && !selectedSquares.includes(index) && gameWon === false && !squareEls[index].textContent) {
+    if (selectedSquares.length < 2 && !selectedSquares.includes(index) && gameFinish === false && !squareEls[index].textContent) {
         selectedSquares.push(index);
         squareEls[index].textContent = randomlyPopulatedArray[index];
 
@@ -100,12 +100,17 @@ function shuffleArray(array) {
 }
 
 function checkWin() {
-    if (matchedPairs === 6) {
-        gameWon = true;
+    if (misses === 10) {
+        gameFinish = true;
+        checkAccuracy();
+        lossMessage();
+    }
+    else if (matchedPairs === 6) {
+        gameFinish = true;
         checkAccuracy();
         winMessage();
     } else {
-        gameWon = false;
+        gameFinish = false;
     }
 }
 
@@ -124,11 +129,16 @@ function checkAccuracy() {
     accuracyEl.textContent = `${accuracy}%`
 }
 
+function lossMessage() {
+    boardEl.classList.remove('grid-board')
+    boardEl.classList.add('finish-message');
+    boardEl.textContent = "You Lost!";
+}
+
 function winMessage() { 
     boardEl.classList.remove('grid-board')
     boardEl.classList.add('finish-message');
     boardEl.textContent = "You Won!";
-
 }   
 
 playAgainBtnEl.addEventListener('click', function () {

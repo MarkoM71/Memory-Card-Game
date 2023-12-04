@@ -14,6 +14,8 @@ const movesEl = document.querySelector('#moves-num');
 const missesEl = document.querySelector('#misses-num');
 const accuracyEl = document.querySelector('#accuracy-num');
 const playAgainBtnEl = document.querySelector('button')
+const playerInputEl = document.querySelector('#player-input');//New Line
+const playerDisplayEl = document.querySelector('.player-name-display'); 
 
 let randomlyPopulatedArray;
 let selectedSquares;
@@ -22,6 +24,7 @@ let moves;
 let misses;
 let accuracy;
 let gameFinish;
+let playerName; // New line
 
 function startGame() {
     randomlyPopulatedArray = []
@@ -34,6 +37,7 @@ function startGame() {
     movesEl.textContent = '0';
     missesEl.textContent = '0';
     accuracyEl.textContent = '0%';
+    playerName = playerInputEl.value;  
 
     boardEl.innerHTML = '';
 
@@ -52,7 +56,6 @@ function startGame() {
     });
     
     function handleClick(index) {
-    console.log(squareEls);
     if (selectedSquares.length < 2 && !selectedSquares.includes(index) && gameFinish === false && !squareEls[index].textContent) {
         selectedSquares.push(index);
         squareEls[index].textContent = randomlyPopulatedArray[index];
@@ -90,6 +93,20 @@ function startGame() {
 
 startGame();
 
+//ADD THE EVENT LISTENER HERE TO MAKE IT CLICK
+document.querySelector(".new-player-name").addEventListener("submit", function (event) {
+    event.preventDefault();
+    playerName = playerInputEl.value;
+    addPlayerName(playerName);
+    console.log(playerName) //works here;
+})
+
+// console.log(playerName) //Doesn't work here
+
+function addPlayerName(name) {
+    playerDisplayEl.textContent = `${name}`;
+}
+
 // The Fisher-Yates Shuffle Algorithm
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -104,11 +121,13 @@ function checkWin() {
         gameFinish = true;
         checkAccuracy();
         lossMessage();
+        //Initatite adding to Leadership board here
     }
     else if (matchedPairs === 6) {
         gameFinish = true;
         checkAccuracy();
         winMessage();
+        //Initatite adding to Leadership board here
     } else {
         gameFinish = false;
     }

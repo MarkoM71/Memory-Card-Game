@@ -80,7 +80,7 @@ button {
     width: 120px;
 }
 
-.winning-message {
+.finish-message {
     display: flex;
     justify-content: center;
     align-items: center;

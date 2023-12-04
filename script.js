@@ -126,14 +126,14 @@ function checkAccuracy() {
 
 function winMessage() { 
     boardEl.classList.remove('grid-board')
-    boardEl.classList.add('winning-message');
+    boardEl.classList.add('finish-message');
     boardEl.textContent = "You Won!";
 
 }   
 
 playAgainBtnEl.addEventListener('click', function () {
     boardEl.textContent = ''; 
-    boardEl.classList.remove('winning-message');
+    boardEl.classList.remove('finish-message');
     boardEl.classList.add('grid-board');
     startGame(); 
 });

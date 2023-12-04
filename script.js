@@ -18,16 +18,19 @@ const playAgainBtnEl = document.querySelector('button')
 
 
 
-let randomlyPopulatedArray = []
-let selectedSquares = [];
+let randomlyPopulatedArray;
+let selectedSquares;
 let matchedPairs;
 let moves;
 let misses;
 let accuracy;
 let gameWon;
 
+
+
 function startGame() {
-    
+    randomlyPopulatedArray = []
+    selectedSquares = [];
     matchedPairs = 0;
     moves = 0;
     misses = 0;
@@ -37,41 +40,23 @@ function startGame() {
     missesEl.textContent = '0';
     accuracyEl.textContent = '0%';
 
+    boardEl.innerHTML = '';
+
     for (let i = 0; i < 12; i++) {
         boardEl.innerHTML += `<div class="square"></div>`
     }
 
     randomlyPopulatedArray = shuffleArray([...sportsArray]);
 
-    // squareEls.forEach(squareEl => {
-    //     squareEl.style.visibility = 'visible';
-    //     squareEl.textContent = '';
-    // });
-}
+    const squareEls = document.querySelectorAll(".square");
 
-startGame();
-
-const squareEls = document.querySelectorAll(".square");
-
-
-
-// The Fisher-Yates Shuffle Algorithm
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-
-squareEls.forEach(function (squareEl, index) {
+    squareEls.forEach(function (squareEl, index) {
     squareEl.addEventListener('click', function () {
         handleClick(index);
     });
-});
-
-function handleClick(index) {
+    });
+    
+    function handleClick(index) {
     console.log(squareEls);
     if (selectedSquares.length < 2 && !selectedSquares.includes(index) && gameWon === false && !squareEls[index].textContent) {
         selectedSquares.push(index);
@@ -106,6 +91,30 @@ function handleClick(index) {
         }
     }
 }
+
+    
+}
+
+startGame();
+
+
+//CONST SQUARES WAS HERE
+
+
+
+// The Fisher-Yates Shuffle Algorithm
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+
+//HANDLE CLICK WAS HERE
+
+
 
 function checkWin() {
     if (matchedPairs === 6) {
@@ -143,14 +152,20 @@ playAgainBtnEl.addEventListener('click', function () {
     boardEl.textContent = ''; 
     boardEl.classList.remove('winning-message');
     boardEl.classList.add('grid-board');
-    // squareEls.forEach(squareEl => {
+    startGame(); 
+});
+
+
+
+// squareEls.forEach(squareEl => {
+    //     squareEl.style.visibility = 'visible';
+    //     squareEl.textContent = '';
+// });
+    
+// squareEls.forEach(squareEl => {
     //     squareEl.style.visibility = 'visible';
     //     squareEl.textContent = '';
     // });
-    
-    startGame(); 
-
-});
 
 
 //THIS WIN MESSAGE WORKS

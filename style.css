@@ -53,7 +53,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    /* padding-top: 5px; */
 }
 
 .moves, .misses, .accuracy {
@@ -84,6 +83,9 @@ button {
     height: 450px;
     width: 700px;
 }
+
+
+
 
 /* .hidden {
     display: none; */ 

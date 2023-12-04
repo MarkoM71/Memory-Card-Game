@@ -10,13 +10,10 @@ const sportsArray = [soccerBall, soccerBall, baseball, baseball,
     basketBall, basketBall, golf, golf];
 
 const boardEl = document.querySelector('#board');
-
 const movesEl = document.querySelector('#moves-num');
 const missesEl = document.querySelector('#misses-num');
 const accuracyEl = document.querySelector('#accuracy-num');
 const playAgainBtnEl = document.querySelector('button')
-
-
 
 let randomlyPopulatedArray;
 let selectedSquares;
@@ -25,8 +22,6 @@ let moves;
 let misses;
 let accuracy;
 let gameWon;
-
-
 
 function startGame() {
     randomlyPopulatedArray = []
@@ -91,16 +86,9 @@ function startGame() {
         }
     }
 }
-
-    
 }
 
 startGame();
-
-
-//CONST SQUARES WAS HERE
-
-
 
 // The Fisher-Yates Shuffle Algorithm
 function shuffleArray(array) {
@@ -110,11 +98,6 @@ function shuffleArray(array) {
   }
   return array;
 }
-
-
-//HANDLE CLICK WAS HERE
-
-
 
 function checkWin() {
     if (matchedPairs === 6) {
@@ -154,6 +137,8 @@ playAgainBtnEl.addEventListener('click', function () {
     boardEl.classList.add('grid-board');
     startGame(); 
 });
+
+
 
 
 

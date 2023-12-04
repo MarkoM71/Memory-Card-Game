@@ -98,10 +98,11 @@ document.querySelector(".new-player-name").addEventListener("submit", function (
     event.preventDefault();
     playerName = playerInputEl.value;
     addPlayerName(playerName);
-    console.log(playerName) //works here;
+    console.log(playerName) //WORKS HERE;
 })
-
-// console.log(playerName) //Doesn't work here
+ 
+// console.log(playerName) //DOESN'T WORK HERE
+console.log(playerInput.value) //THIS WORKS HERE.
 
 function addPlayerName(name) {
     playerDisplayEl.textContent = `${name}`;

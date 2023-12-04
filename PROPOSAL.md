@@ -39,12 +39,12 @@ As a player, I want the computer to give me functionality to play again.
 
 
 -STRETCH GOALS
-As a player, I'd like to see sounds made in turning the cards over.  
-As a player, I'd like to hear sounds when there a match is made like a ring.
-As a player, I'd like to see a victory animation such as confetti, so I feel good about my victory.  
+-As a player, I'd like to hear sounds when there a match is made like a ring.
+-As a player, I'd like to see a victory animation such as confetti, so I feel good about my victory.  
+-As a player, I'd like to see sounds when the card is clicked the cards over.
 As a player, I'd like to see card flip animation.
 As a player, I'd like a lose state, meaning if I don't get the matches in a certain amount of time.  I lose the game.
-As a player, I'd like to be to be able to have a choice to play a 16 card game.
+
 
 
 NOTIONBOARD TEMPLATE

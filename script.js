@@ -10,7 +10,7 @@ const sportsArray = [soccerBall, soccerBall, baseball, baseball,
     basketBall, basketBall, golf, golf];
 
 const boardEl = document.querySelector('#board');
-const squareEls = document.querySelectorAll(".square");
+
 const movesEl = document.querySelector('#moves-num');
 const missesEl = document.querySelector('#misses-num');
 const accuracyEl = document.querySelector('#accuracy-num');
@@ -27,19 +27,33 @@ let accuracy;
 let gameWon;
 
 function startGame() {
+    
     matchedPairs = 0;
     moves = 0;
     misses = 0;
     accuracy = 0;
     gameWon = false;
-    randomlyPopulatedArray = shuffleArray([...sportsArray]);
-
     movesEl.textContent = '0';
     missesEl.textContent = '0';
     accuracyEl.textContent = '0%';
+
+    for (let i = 0; i < 12; i++) {
+        boardEl.innerHTML += `<div class="square"></div>`
+    }
+
+    randomlyPopulatedArray = shuffleArray([...sportsArray]);
+
+    // squareEls.forEach(squareEl => {
+    //     squareEl.style.visibility = 'visible';
+    //     squareEl.textContent = '';
+    // });
 }
 
 startGame();
+
+const squareEls = document.querySelectorAll(".square");
+
+
 
 // The Fisher-Yates Shuffle Algorithm
 function shuffleArray(array) {
@@ -58,6 +72,7 @@ squareEls.forEach(function (squareEl, index) {
 });
 
 function handleClick(index) {
+    console.log(squareEls);
     if (selectedSquares.length < 2 && !selectedSquares.includes(index) && gameWon === false && !squareEls[index].textContent) {
         selectedSquares.push(index);
         squareEls[index].textContent = randomlyPopulatedArray[index];
@@ -75,6 +90,7 @@ function handleClick(index) {
                 setTimeout(() => {
                     squareEls[index1].style.visibility = 'hidden';
                     squareEls[index2].style.visibility = 'hidden';
+                    
                 }, 1000);
 
             } else {
@@ -125,13 +141,15 @@ function winMessage() {
 
 playAgainBtnEl.addEventListener('click', function () {
     boardEl.textContent = ''; 
-    boardEl.style.display = 'grid';
-    boardEl.classList.toggle('hidden');
-    squareEls.forEach(squareEl => {
-        squareEl.style.visibility = 'visible';
-        squareEl.textContent = ''; 
-    });
+    boardEl.classList.remove('winning-message');
+    boardEl.classList.add('grid-board');
+    // squareEls.forEach(squareEl => {
+    //     squareEl.style.visibility = 'visible';
+    //     squareEl.textContent = '';
+    // });
+    
     startGame(); 
+
 });
 
 
@@ -143,6 +161,17 @@ playAgainBtnEl.addEventListener('click', function () {
 //     boardEl.textContent = "You Won!";
 
 // }   
+
+// playAgainBtnEl.addEventListener('click', function () {
+//     boardEl.textContent = ''; 
+//     boardEl.style.display = 'grid';
+//     boardEl.classList.toggle('hidden');
+//     squareEls.forEach(squareEl => {
+//         squareEl.style.visibility = 'visible';
+//         squareEl.textContent = ''; 
+//     });
+//     startGame(); 
+// });
 
     // boardEl.style.justifyContent = 'center';
     // boardEl.style.alignItems = 'center';
@@ -166,6 +195,9 @@ playAgainBtnEl.addEventListener('click', function () {
 //     startGame(); 
 // });
 
+//THIS IS AN OPTION, BUT IT TAKES AWAY THE VISIBILITY
+// squareEls[index1].style.display = 'none';
+// squareEls[index2].style.display = 'none';
 
 // playAgainBtnEl.addEventListener('click', startGame);
 

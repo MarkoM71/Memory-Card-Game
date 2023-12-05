@@ -51,6 +51,7 @@ function startGame() {
     missesEl.textContent = '0';
     accuracyEl.textContent = '0%';
     playerName = playerInputEl.value;
+    playerDisplayEl.textContent = "";
     // playerName = '';  
     
 
@@ -113,7 +114,9 @@ document.querySelector(".new-player-name").addEventListener("submit", function (
     event.preventDefault();
     playerName = playerInputEl.value;
     addPlayerName(playerName);
-    console.log(playerName) //WORKS HERE;
+    let playerForm = document.querySelector(".new-player-name");
+    playerForm.reset();
+    // console.log(playerName) WORKS HERE;
 })
  
 // console.log(playerName) //DOESN'T WORK HERE
@@ -138,7 +141,8 @@ function checkWin() {
         checkAccuracy();
         lossMessage();
         gameOutcome = 'Loss';
-        addToLeadershipArray()
+        addToLeadershipArray();
+        displayLeaders();
         
     }
     else if (matchedPairs === 6) {
@@ -146,7 +150,8 @@ function checkWin() {
         checkAccuracy();
         winMessage();
         gameOutcome = 'Win';
-        addToLeadershipArray()
+        addToLeadershipArray();
+        displayLeaders();
         
     } else {
         gameFinish = false;
@@ -191,37 +196,51 @@ playAgainBtnEl.addEventListener('click', function () {
 function addToLeadershipArray() {
     let newPlayer = new Player(playerName, moves, misses, accuracy, gameOutcome);
     leadershipArray.push(newPlayer);
+    // ADD SORTING ALGRORITHM HERE
     storeData();
 }
 
-// console.log(leadershipArray);
-
 //STORE LEADERSHIP ARRAY IN LOCAL STORAGE
-function storeData() {
+function storeData() { //NEEDS TO BE REFACTORED
     localStorage.setItem(`leadershipArray`, JSON.stringify(leadershipArray));
 }
 
 //RESTORE LEADERSHIP FROM LOCAL STORAGE WHEN PAGE REFRESHED
-function restoreData() {
+function restoreData() {//NEEDS TO BE REFACTORED
     if (!localStorage.leadershipArray) {
-        // displayLeaders();
-        console.log(leadershipArray);
+        displayLeaders();
     } else {
         let objects = localStorage.getItem('leadershipArray')
         objects = JSON.parse(objects);
         leadershipArray = objects;
-        // displayLeaders();
-        console.log(leadershipArray);
+        displayLeaders();
     }
 }
 
 restoreData();
 
+function displayLeaders() { //NEEDS TO BE REFACTORED
+    let resultsLeaders = document.querySelector(".leadership-container");
+    resultsLeaders.innerHTML = "";
+    for (let i = 0; i < leadershipArray.length; i++) {
+        let player = leadershipArray[i];
+        let playerResultsEl = document.createElement("div");
+        playerResultsEl.setAttribute("class", "player-row");
+        playerResultsEl.innerHTML = `
+            <div>${player.name}</div>
+            <div>${player.moves}</div>
+            <div>${player.misses}</div>
+            <div>${player.accuracy}%</div>
+            <div>${player.gameOutcome}</div>`
+        resultsLeaders.appendChild(playerResultsEl);
+    }
+}
 
 
 
 
 
+//playerName, moves, misses, accuracy, gameOutcome
 
 // squareEls.forEach(squareEl => {
     //     squareEl.style.visibility = 'visible';

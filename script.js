@@ -187,12 +187,37 @@ playAgainBtnEl.addEventListener('click', function () {
     startGame(); 
 });
 
+//ADDING PLAYERS TO THE LEADERSHIP ARRAY
 function addToLeadershipArray() {
     let newPlayer = new Player(playerName, moves, misses, accuracy, gameOutcome);
     leadershipArray.push(newPlayer);
+    storeData();
 }
 
-console.log(leadershipArray);
+// console.log(leadershipArray);
+
+//STORE LEADERSHIP ARRAY IN LOCAL STORAGE
+function storeData() {
+    localStorage.setItem(`leadershipArray`, JSON.stringify(leadershipArray));
+}
+
+//RESTORE LEADERSHIP FROM LOCAL STORAGE WHEN PAGE REFRESHED
+function restoreData() {
+    if (!localStorage.leadershipArray) {
+        // displayLeaders();
+        console.log(leadershipArray);
+    } else {
+        let objects = localStorage.getItem('leadershipArray')
+        objects = JSON.parse(objects);
+        leadershipArray = objects;
+        // displayLeaders();
+        console.log(leadershipArray);
+    }
+}
+
+restoreData();
+
+
 
 
 

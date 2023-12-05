@@ -137,7 +137,7 @@ function shuffleArray(array) {
 }
 
 function checkWin() {
-    if (misses === 2) {
+    if (misses === 10) {
         gameFinish = true;
         checkAccuracy();
         lossMessage();

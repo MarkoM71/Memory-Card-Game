@@ -25,6 +25,19 @@ let misses;
 let accuracy;
 let gameFinish;
 let playerName; // New line
+let leadershipArray = [];
+let gameOutcome;
+
+//CREATES PLAYER CLASS
+class Player{
+    constructor(name, moves, misses, accuracy, gameOutcome) {
+        this.name = name;
+        this.moves = moves;
+        this.misses = misses;
+        this.accuracy = accuracy;
+        this.gameOutcome = gameOutcome
+    }
+}
 
 function startGame() {
     randomlyPopulatedArray = []
@@ -37,7 +50,9 @@ function startGame() {
     movesEl.textContent = '0';
     missesEl.textContent = '0';
     accuracyEl.textContent = '0%';
-    playerName = playerInputEl.value;  
+    playerName = playerInputEl.value;
+    // playerName = '';  
+    
 
     boardEl.innerHTML = '';
 
@@ -102,7 +117,7 @@ document.querySelector(".new-player-name").addEventListener("submit", function (
 })
  
 // console.log(playerName) //DOESN'T WORK HERE
-console.log(playerInput.value) //THIS WORKS HERE.
+// console.log(playerInput.value) THIS WORKS HERE.
 
 function addPlayerName(name) {
     playerDisplayEl.textContent = `${name}`;
@@ -118,17 +133,21 @@ function shuffleArray(array) {
 }
 
 function checkWin() {
-    if (misses === 10) {
+    if (misses === 2) {
         gameFinish = true;
         checkAccuracy();
         lossMessage();
-        //Initatite adding to Leadership board here
+        gameOutcome = 'Loss';
+        addToLeadershipArray()
+        
     }
     else if (matchedPairs === 6) {
         gameFinish = true;
         checkAccuracy();
         winMessage();
-        //Initatite adding to Leadership board here
+        gameOutcome = 'Win';
+        addToLeadershipArray()
+        
     } else {
         gameFinish = false;
     }
@@ -167,6 +186,13 @@ playAgainBtnEl.addEventListener('click', function () {
     boardEl.classList.add('grid-board');
     startGame(); 
 });
+
+function addToLeadershipArray() {
+    let newPlayer = new Player(playerName, moves, misses, accuracy, gameOutcome);
+    leadershipArray.push(newPlayer);
+}
+
+console.log(leadershipArray);
 
 
 

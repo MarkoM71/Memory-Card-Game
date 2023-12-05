@@ -26,6 +26,7 @@ let accuracy;
 let gameFinish;
 let playerName; // New line
 let leadershipArray = [];
+let finalArray = [];
 let gameOutcome;
 
 //CREATES PLAYER CLASS
@@ -196,23 +197,23 @@ playAgainBtnEl.addEventListener('click', function () {
 function addToLeadershipArray() {
     let newPlayer = new Player(playerName, moves, misses, accuracy, gameOutcome);
     leadershipArray.push(newPlayer);
-    // ADD SORTING ALGRORITHM HERE
+    sortingFinalArray()
     storeData();
 }
 
 //STORE LEADERSHIP ARRAY IN LOCAL STORAGE
 function storeData() { //NEEDS TO BE REFACTORED
-    localStorage.setItem(`leadershipArray`, JSON.stringify(leadershipArray));
+    localStorage.setItem(`finalArray`, JSON.stringify(finalArray));
 }
 
 //RESTORE LEADERSHIP FROM LOCAL STORAGE WHEN PAGE REFRESHED
 function restoreData() {//NEEDS TO BE REFACTORED
-    if (!localStorage.leadershipArray) {
+    if (!localStorage.finalArray) {
         displayLeaders();
     } else {
-        let objects = localStorage.getItem('leadershipArray')
+        let objects = localStorage.getItem('finalArray')
         objects = JSON.parse(objects);
-        leadershipArray = objects;
+        finalArray = objects;
         displayLeaders();
     }
 }
@@ -222,8 +223,8 @@ restoreData();
 function displayLeaders() { //NEEDS TO BE REFACTORED
     let resultsLeaders = document.querySelector(".leadership-container");
     resultsLeaders.innerHTML = "";
-    for (let i = 0; i < leadershipArray.length; i++) {
-        let player = leadershipArray[i];
+    for (let i = 0; i < finalArray.length; i++) {
+        let player = finalArray[i];
         let playerResultsEl = document.createElement("div");
         playerResultsEl.setAttribute("class", "player-row");
         playerResultsEl.innerHTML = `
@@ -236,10 +237,36 @@ function displayLeaders() { //NEEDS TO BE REFACTORED
     }
 }
 
+function sortingFinalArray() {
+    const namedPlayers = leadershipArray.filter(player => player.name);
+
+    const sortedPlayers = namedPlayers.sort((a, b) => {
+        if (a.gameOutcome === "Win" && b.gameOutcome !== "Win") {
+            return -1;
+        } else if (a.gameOutcome !== "Win" && b.gameOutcome === "Win") {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    const winners = sortedPlayers.filter(player => player.gameOutcome === "Win");
+    const sortedWinners = winners.sort((a, b) => b.accuracy - a.accuracy);
+
+    const losers = sortedPlayers.filter(player => player.gameOutcome !== "Win");
+    const sortedLosers = losers.sort((a, b) => b.accuracy - a.accuracy);
+
+    finalArray = [...sortedWinners, ...sortedLosers].slice(0, 10);
+}
 
 
 
 
+
+
+
+
+///
 //playerName, moves, misses, accuracy, gameOutcome
 
 // squareEls.forEach(squareEl => {

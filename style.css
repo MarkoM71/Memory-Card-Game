@@ -13,8 +13,6 @@ body {
     background-color: rgb(137, 131, 131);
 }
 
-
-
 #board {
     background-color: white;
 }
@@ -112,8 +110,6 @@ body {
     width: 700px;
 }
 
-
-
 .player-name-display {
     font-size: 25px;
 }
@@ -133,8 +129,8 @@ body {
 }
 
 .leadership-board {
-    height: 320px;
-    width: 600px;
+    height: 400px;
+    width: 680px;
     border: 1px solid black;
     margin: 200px auto;
     background-color: lightgrey;
@@ -142,22 +138,41 @@ body {
 
 .leadership-title {
     font-size: 25px;
-    border: 1px solid black;
+    font-weight: bold;
     text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding-right: 10px;
+}
+
+.leadership-properties {
+    /* display: flex;
+    flex-direction: row; */
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(5, 95px);
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 20px;
+    padding-left: 50px;
+    margin-bottom: 7px;
 }
 
 .leadership-container {
-    font-size: 20px;
+    font-size: 17px;
     display: grid;
+    grid-row-gap: 7px;
+    padding-left: 50px;
     /* grid-template-columns: repeat(5, 1fr);   */
 }
 
 .player-row {
     /* display: flex; */
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(5, 95px); 
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 30px;
 }
 

@@ -272,12 +272,27 @@ popUpButton.addEventListener("click", function () {
     popUpLeaders.style.display = "none";
 })
 
-//CLOSE LEADERSHIP BOARD WITH CLICK OUTSIDE OF MODAL
+//CLOSE LEADERSHIP BOARD OR ADD NAME FORM WITH CLICK OUTSIDE OF MODAL
 window.onclick = function(event) {
   if (event.target == popUpLeaders) {
     popUpLeaders.style.display = "none";
+  } else if (event.target == popUpPlayerName) {
+    popUpPlayerName.style.display = "none";
   }
 }
+
+//DISPLAY ADD NAME FORM
+let addNameButton = document.querySelector(".add-name-button");
+const popUpPlayerName = document.querySelector('.pop-up-player-name');
+addNameButton.addEventListener("click", function () {
+    popUpPlayerName.style.display = "block";
+})
+
+//CLOSE ADD NAME FORM
+// let popUpButton = document.querySelector(".close");
+// popUpButton.addEventListener("click", function () {
+//     popUpLeaders.style.display = "none";
+// })
 
 
 

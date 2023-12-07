@@ -20,6 +20,7 @@
     </div>
     <div class="pop-up-player-name">
         <form class="new-player-name">
+            <legend>New Player</legend>
             <label for="player-input">Name:</label>
             <input type="text" id="player-input" required></input>
             <input type="submit" value="Add Name">
@@ -27,6 +28,7 @@
     </div>
     <div class="results">
         <div class="top-results">
+            <div class="player-name-display"></div>
             <div class="moves">
                 <div id="moves-num">0</div>
                 <div id="moves-text">Moves</div>
@@ -39,12 +41,12 @@
                 <div id="accuracy-num">0</div>
                 <div id="accuracy-text">Accuracy</div>
             </div>
-            
         </div>
         <div class="bottom-results">
-            <button class="leadership-button">Leadership Board</button>
             <button class="play-again-button">Play Again</button>
-            <div class="player-name-display"></div>
+            <button class="add-name-button">Add Name</button>
+            <button class="leadership-button">Leadership Board</button>
+            
         </div>
     </div>
 </body>

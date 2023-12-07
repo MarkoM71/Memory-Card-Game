@@ -61,10 +61,16 @@ body {
     align-items: center;
     font-size: 20px;
     width: 173px;
+    height: 45px;
 }
 
 .p-name {
     text-align: center;
+    height: 22px;
+}
+
+.p-name-title {
+    height: 22px;
 }
 
 
@@ -98,7 +104,7 @@ body {
     background-color: blue;
     color: white;
     height: 40px;
-    width: 200px;
+    width: 120px;
     cursor: pointer;
 }
 
@@ -235,6 +241,7 @@ input[type="text"] {
     font-size: 20px;
     border: 1px solid black;
     height: 30px;
+    text-align: center;
 }
 
 input[type="submit"] {

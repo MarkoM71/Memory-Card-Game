@@ -148,12 +148,14 @@ body {
 
 .leadership-container {
     font-size: 20px;
-    /* display: grid;
-    grid-template-columns: repeat(5, 1fr); */ 
+    display: grid;
+    /* grid-template-columns: repeat(5, 1fr);   */
 }
 
 .player-row {
-    display: flex;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
     flex-direction: row;
     justify-content: space-between;
     gap: 30px;

@@ -220,7 +220,7 @@ function restoreData() {
 
 restoreData();
 
-function displayLeaders() { //NEEDS TO BE REFACTORED
+function displayLeaders() { 
     let resultsLeaders = document.querySelector(".leadership-container");
     resultsLeaders.innerHTML = "";
     for (let i = 0; i < finalArray.length; i++) {
@@ -296,6 +296,24 @@ closeAddNameButton.addEventListener("click", function () {
 
 
 
+
+
+// function displayLeaders() { 
+//     let resultsLeaders = document.querySelector(".leadership-container");
+//     resultsLeaders.innerHTML = "";
+//     for (let i = 0; i < finalArray.length; i++) {
+//         let player = finalArray[i];
+//         let playerResultsEl = document.createElement("div");
+//         playerResultsEl.setAttribute("class", "player-row");
+//         playerResultsEl.innerHTML = `
+//             <div>${player.name}</div>
+//             <div>${player.moves}</div>
+//             <div>${player.misses}</div>
+//             <div>${player.accuracy}%</div>
+//             <div>${player.gameOutcome}</div>`
+//         resultsLeaders.appendChild(playerResultsEl);
+//     }
+// }
 
 
 

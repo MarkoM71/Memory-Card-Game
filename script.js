@@ -15,7 +15,7 @@ const missesEl = document.querySelector('#misses-num');
 const accuracyEl = document.querySelector('#accuracy-num');
 const playAgainBtnEl = document.querySelector('.play-again-button')
 const playerInputEl = document.querySelector('#player-input');//New Line
-const playerDisplayEl = document.querySelector('.player-name-display'); 
+const playerDisplayEl = document.querySelector('.p-name'); 
 
 let randomlyPopulatedArray;
 let selectedSquares;
@@ -117,6 +117,7 @@ document.querySelector(".new-player-name").addEventListener("submit", function (
     addPlayerName(playerName);
     let playerForm = document.querySelector(".new-player-name");
     playerForm.reset();
+    popUpPlayerName.style.display = "none";
     // console.log(playerName) WORKS HERE;
 })
  

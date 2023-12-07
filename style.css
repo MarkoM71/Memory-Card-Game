@@ -50,17 +50,28 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 70px;
-    padding-left: 27px;
+    gap: 0px;
+    /* padding-left: 27px; */
 }
 
-.moves, .misses, .accuracy {
+.moves, .misses, .accuracy, .player-name-display {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 20px;
+    width: 173px;
 }
+
+.p-name {
+    text-align: center;
+}
+
+
+
+/* .player-name-display {
+    font-size: 20px;
+} */
 
 .bottom-results {
     display: flex;
@@ -108,10 +119,6 @@ body {
     font-size: 70px;
     height: 450px;
     width: 700px;
-}
-
-.player-name-display {
-    font-size: 25px;
 }
 
 .pop-up-leaders {

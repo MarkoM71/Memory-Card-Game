@@ -64,8 +64,7 @@ body {
     height: 45px;
 }
 
-.p-name {
-    text-align: center;
+#p-name {
     height: 22px;
 }
 
@@ -98,6 +97,12 @@ body {
     cursor: pointer;
 }
 
+.play-again-button:hover {
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+}
+
 .leadership-button {
     font-size: 20px;
     border-radius: 5px;
@@ -108,6 +113,12 @@ body {
     cursor: pointer;
 }
 
+.leadership-button:hover {
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+}
+
 .add-name-button {
     font-size: 20px;
     border-radius: 5px;
@@ -116,6 +127,12 @@ body {
     height: 40px;
     width: 120px;
     cursor: pointer;
+}
+
+.add-name-button:hover {
+    background-color: white;
+    color: blue;
+    font-weight: bold;
 }
 
 .finish-message {
@@ -253,6 +270,14 @@ input[type="submit"] {
     width: 120px;
     cursor: pointer;
 }
+
+input[type="submit"]:hover{
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+}
+
+
 
 .close-new-player {
     color: #aaa;

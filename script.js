@@ -15,7 +15,7 @@ const missesEl = document.querySelector('#misses-num');
 const accuracyEl = document.querySelector('#accuracy-num');
 const playAgainBtnEl = document.querySelector('.play-again-button')
 const playerInputEl = document.querySelector('#player-input');//New Line
-const playerDisplayEl = document.querySelector('.p-name'); 
+const playerDisplayEl = document.querySelector('#p-name'); 
 
 let randomlyPopulatedArray;
 let selectedSquares;
@@ -52,7 +52,7 @@ function startGame() {
     missesEl.textContent = '0';
     accuracyEl.textContent = '0%';
     playerName = playerInputEl.value;
-    playerDisplayEl.textContent = "";
+    playerDisplayEl.textContent = "Default";
     // playerName = '';  
     
 

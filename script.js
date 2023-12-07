@@ -13,7 +13,7 @@ const boardEl = document.querySelector('#board');
 const movesEl = document.querySelector('#moves-num');
 const missesEl = document.querySelector('#misses-num');
 const accuracyEl = document.querySelector('#accuracy-num');
-const playAgainBtnEl = document.querySelector('button')
+const playAgainBtnEl = document.querySelector('.play-again-button')
 const playerInputEl = document.querySelector('#player-input');//New Line
 const playerDisplayEl = document.querySelector('.player-name-display'); 
 
@@ -137,7 +137,7 @@ function shuffleArray(array) {
 }
 
 function checkWin() {
-    if (misses === 10) {
+    if (misses === 2) {
         gameFinish = true;
         checkAccuracy();
         lossMessage();
@@ -202,12 +202,12 @@ function addToLeadershipArray() {
 }
 
 //STORE LEADERSHIP ARRAY IN LOCAL STORAGE
-function storeData() { //NEEDS TO BE REFACTORED
+function storeData() { 
     localStorage.setItem(`finalArray`, JSON.stringify(finalArray));
 }
 
 //RESTORE LEADERSHIP FROM LOCAL STORAGE WHEN PAGE REFRESHED
-function restoreData() {//NEEDS TO BE REFACTORED
+function restoreData() {
     if (!localStorage.finalArray) {
         displayLeaders();
     } else {
@@ -259,11 +259,41 @@ function sortingFinalArray() {
     finalArray = [...sortedWinners, ...sortedLosers].slice(0, 10);
 }
 
+//DISPLAY LEADERSHIP BOARD
+let leadershipButton = document.querySelector(".leadership-button");
+const popUpLeaders = document.querySelector('.pop-up-leaders');
+leadershipButton.addEventListener("click", function () {
+    popUpLeaders.style.display = "block";
+})
+
+//CLOSE LEADERSHIP BOARD
+let popUpButton = document.querySelector(".close");
+popUpButton.addEventListener("click", function () {
+    popUpLeaders.style.display = "none";
+})
+
+//CLOSE LEADERSHIP BOARD WITH CLICK OUTSIDE OF MODAL
+window.onclick = function(event) {
+  if (event.target == popUpLeaders) {
+    popUpLeaders.style.display = "none";
+  }
+}
 
 
 
 
 
+
+/*<span class="label">Name:</span>
+            <span class="value">${player.name}</span>
+            <span class="label">Moves:</span>
+            <span class="value">${player.moves}</span>
+            <span class="label">Misses:</span>
+            <span class="value">${player.misses}</span>
+            <span class="label">Accuracy:</span>
+            <span class="value">${player.accuracy}%</span>
+            <span class="label">Outcome:</span>
+            <span class="value">${player.gameOutcome}</span>*/
 
 
 ///

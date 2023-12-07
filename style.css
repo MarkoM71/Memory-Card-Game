@@ -13,30 +13,7 @@ body {
     background-color: rgb(137, 131, 131);
 }
 
-.game {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 
-.leadership-title {
-    font-size: 25px;
-    border: 1px solid black;
-}
-
-.leadership-board {
-    height: 300px;
-    width: 340px;
-    border: 1px solid black;
-}
-
-.player-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 30px;
-}
 
 #board {
     background-color: white;
@@ -105,6 +82,15 @@ body {
     width: 120px;
 }
 
+.leadership-button {
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    height: 40px;
+    width: 200px;
+}
+
 .finish-message {
     display: flex;
     justify-content: center;
@@ -126,7 +112,73 @@ body {
     font-size: 25px;
 }
 
+.pop-up-leaders {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    font-size: 20px;
+}
 
+.leadership-board {
+    height: 320px;
+    width: 600px;
+    border: 1px solid black;
+    margin: 200px auto;
+    background-color: lightgrey;
+}
+
+.leadership-title {
+    font-size: 25px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.leadership-container {
+    font-size: 20px;
+    /* display: grid;
+    grid-template-columns: repeat(5, 1fr); */ 
+}
+
+.player-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* .game {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} */
 
 /* .hidden {
     display: none; */ 
@@ -137,7 +189,6 @@ body {
     height: 450px;
     width: 700px;
 }
-
 
 /* position: absolute;
     width: 100%;

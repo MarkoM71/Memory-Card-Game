@@ -80,6 +80,7 @@ body {
     color: white;
     height: 40px;
     width: 120px;
+    cursor: pointer;
 }
 
 .leadership-button {
@@ -89,6 +90,7 @@ body {
     color: white;
     height: 40px;
     width: 200px;
+    cursor: pointer;
 }
 
 .add-name-button {
@@ -98,6 +100,7 @@ body {
     color: white;
     height: 40px;
     width: 120px;
+    cursor: pointer;
 }
 
 .finish-message {
@@ -192,9 +195,49 @@ body {
     align-items: center;
     font-size: 20px;
     margin: 200px auto;
-    height: 150px;
+    height: 280px;
     width: 340px;
     background-color: lightgrey;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+legend {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    font-size: 20px;
+    border: 1px solid black;
+    height: 30px;
+}
+
+input[type="submit"] {
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.close-new-player {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-right: 15px;
+    padding-left: 320px;
+    height: 28px;
+}
+
+.close-new-player:hover,
+.close-new-player:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 

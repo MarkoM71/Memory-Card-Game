@@ -289,10 +289,10 @@ addNameButton.addEventListener("click", function () {
 })
 
 //CLOSE ADD NAME FORM
-// let popUpButton = document.querySelector(".close");
-// popUpButton.addEventListener("click", function () {
-//     popUpLeaders.style.display = "none";
-// })
+let closeAddNameButton = document.querySelector(".close-new-player");
+closeAddNameButton.addEventListener("click", function () {
+    popUpPlayerName.style.display = "none";
+})
 
 
 

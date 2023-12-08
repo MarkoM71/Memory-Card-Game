@@ -11,6 +11,7 @@ HTML, CSS, JavaScript, GIT
 
 -WIREFRAMES/SCREENSHOTS
 
+
 -TIMELINE
 Friday:
 Create and present proposal.  Create html, js, css files.

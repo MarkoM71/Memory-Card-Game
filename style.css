@@ -13,31 +13,6 @@ body {
     background-color: rgb(137, 131, 131);
 }
 
-.game {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.leadership-title {
-    font-size: 25px;
-    border: 1px solid black;
-}
-
-.leadership-board {
-    height: 300px;
-    width: 340px;
-    border: 1px solid black;
-}
-
-.player-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 30px;
-}
-
 #board {
     background-color: white;
 }
@@ -67,7 +42,7 @@ body {
     height: 130px;
     margin-top: 5px;
     border: 1px solid black;
-    padding-top: 10px;
+    padding-top: 15px;
     border-radius: 5px;
 }
 
@@ -75,16 +50,29 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 70px;
-    padding-left: 27px;
+    gap: 0px;
 }
 
-.moves, .misses, .accuracy {
+.moves, .misses, .accuracy, .player-name-display {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 20px;
+    width: 173px;
+    height: 45px;
+}
+
+#p-name, #moves-num, #misses-num, #accuracy-num {
+    font-size: 19px;
+}
+
+.p-name-title {
+    height: 23px;
+}
+
+#p-name {
+    height: 22px;
 }
 
 .bottom-results {
@@ -103,6 +91,45 @@ body {
     color: white;
     height: 40px;
     width: 120px;
+    cursor: pointer;
+}
+
+.play-again-button:hover {
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+}
+
+.leadership-button {
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.leadership-button:hover {
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+}
+
+.add-name-button {
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.add-name-button:hover {
+    background-color: white;
+    color: blue;
+    font-weight: bold;
 }
 
 .finish-message {
@@ -114,32 +141,151 @@ body {
     width: 700px;
 }
 
-.new-player-name {
-    display: flex;
-    flex-direction: column ;
-    justify-content: center;
-    align-items: center;
+.pop-up-leaders {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0, 0, 0); 
+    background-color: rgba(0, 0, 0, 0.4); 
     font-size: 20px;
 }
 
-.player-name-display {
-    font-size: 25px;
+.leadership-board {
+    height: 400px;
+    width: 680px;
+    border: 1px solid black;
+    margin: 200px auto;
+    background-color: lightgrey;
 }
 
+.leadership-title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding-right: 10px;
+}
 
+.leadership-properties {
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(5, 95px);
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 20px;
+    padding-left: 50px;
+    margin-bottom: 7px;
+}
 
-/* .hidden {
-    display: none; */ 
-    /* display: flex;
+.leadership-container {
+    font-size: 17px;
+    display: grid;
+    grid-row-gap: 7px;
+    padding-left: 50px;
+}
+
+.player-row {
+    display: grid;
+    grid-template-columns: repeat(5, 95px); 
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pop-up-player-name {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0, 0, 0); 
+    background-color: rgba(0, 0, 0, 0.4); 
+    font-size: 20px;
+}
+
+.new-player-name {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 70px;
-    height: 450px;
-    width: 700px;
+    font-size: 20px;
+    margin: 200px auto;
+    height: 280px;
+    width: 340px;
+    background-color: lightgrey;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+legend {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    font-size: 20px;
+    border: 1px solid black;
+    height: 30px;
+    text-align: center;
+}
+
+input[type="submit"] {
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+}
+
+.close-new-player {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-right: 15px;
+    padding-left: 320px;
+    height: 28px;
+}
+
+.close-new-player:hover,
+.close-new-player:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
-/* position: absolute;
-    width: 100%;
-    height: 100%; */
-
+/* WORK ON RESPONSIVE DESIGN */

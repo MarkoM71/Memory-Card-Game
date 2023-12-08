@@ -13,9 +13,9 @@ const boardEl = document.querySelector('#board');
 const movesEl = document.querySelector('#moves-num');
 const missesEl = document.querySelector('#misses-num');
 const accuracyEl = document.querySelector('#accuracy-num');
-const playAgainBtnEl = document.querySelector('button')
-const playerInputEl = document.querySelector('#player-input');//New Line
-const playerDisplayEl = document.querySelector('.player-name-display'); 
+const playAgainBtnEl = document.querySelector('.play-again-button')
+const playerInputEl = document.querySelector('#player-input');
+const playerDisplayEl = document.querySelector('#p-name'); 
 
 let randomlyPopulatedArray;
 let selectedSquares;
@@ -24,12 +24,11 @@ let moves;
 let misses;
 let accuracy;
 let gameFinish;
-let playerName; // New line
+let playerName; 
 let leadershipArray = [];
 let finalArray = [];
 let gameOutcome;
 
-//CREATES PLAYER CLASS
 class Player{
     constructor(name, moves, misses, accuracy, gameOutcome) {
         this.name = name;
@@ -52,10 +51,8 @@ function startGame() {
     missesEl.textContent = '0';
     accuracyEl.textContent = '0%';
     playerName = playerInputEl.value;
-    playerDisplayEl.textContent = "";
-    // playerName = '';  
+    playerDisplayEl.textContent = "Your Name";
     
-
     boardEl.innerHTML = '';
 
     for (let i = 0; i < 12; i++) {
@@ -100,7 +97,6 @@ function startGame() {
                 }, 1250);
                 addMisses();
             }
-
             checkWin();
             selectedSquares = [];
         }
@@ -110,18 +106,14 @@ function startGame() {
 
 startGame();
 
-//ADD THE EVENT LISTENER HERE TO MAKE IT CLICK
 document.querySelector(".new-player-name").addEventListener("submit", function (event) {
     event.preventDefault();
     playerName = playerInputEl.value;
     addPlayerName(playerName);
     let playerForm = document.querySelector(".new-player-name");
     playerForm.reset();
-    // console.log(playerName) WORKS HERE;
+    popUpPlayerName.style.display = "none";
 })
- 
-// console.log(playerName) //DOESN'T WORK HERE
-// console.log(playerInput.value) THIS WORKS HERE.
 
 function addPlayerName(name) {
     playerDisplayEl.textContent = `${name}`;
@@ -193,7 +185,6 @@ playAgainBtnEl.addEventListener('click', function () {
     startGame(); 
 });
 
-//ADDING PLAYERS TO THE LEADERSHIP ARRAY
 function addToLeadershipArray() {
     let newPlayer = new Player(playerName, moves, misses, accuracy, gameOutcome);
     leadershipArray.push(newPlayer);
@@ -201,13 +192,13 @@ function addToLeadershipArray() {
     storeData();
 }
 
-//STORE LEADERSHIP ARRAY IN LOCAL STORAGE
-function storeData() { //NEEDS TO BE REFACTORED
+//STORE FINAL ARRAY IN LOCAL STORAGE
+function storeData() { 
     localStorage.setItem(`finalArray`, JSON.stringify(finalArray));
 }
 
-//RESTORE LEADERSHIP FROM LOCAL STORAGE WHEN PAGE REFRESHED
-function restoreData() {//NEEDS TO BE REFACTORED
+//RESTORE FINAL ARRAY FROM LOCAL STORAGE WHEN PAGE REFRESHED
+function restoreData() {
     if (!localStorage.finalArray) {
         displayLeaders();
     } else {
@@ -220,7 +211,7 @@ function restoreData() {//NEEDS TO BE REFACTORED
 
 restoreData();
 
-function displayLeaders() { //NEEDS TO BE REFACTORED
+function displayLeaders() { 
     let resultsLeaders = document.querySelector(".leadership-container");
     resultsLeaders.innerHTML = "";
     for (let i = 0; i < finalArray.length; i++) {
@@ -259,99 +250,37 @@ function sortingFinalArray() {
     finalArray = [...sortedWinners, ...sortedLosers].slice(0, 10);
 }
 
+//DISPLAY LEADERSHIP BOARD
+let leadershipButton = document.querySelector(".leadership-button");
+const popUpLeaders = document.querySelector('.pop-up-leaders');
+leadershipButton.addEventListener("click", function () {
+    popUpLeaders.style.display = "block";
+})
 
+//CLOSE LEADERSHIP BOARD
+let popUpButton = document.querySelector(".close");
+popUpButton.addEventListener("click", function () {
+    popUpLeaders.style.display = "none";
+})
 
+//CLOSE LEADERSHIP BOARD OR ADD-NAME FORM WITH CLICK OUTSIDE OF MODAL
+window.onclick = function(event) {
+  if (event.target == popUpLeaders) {
+    popUpLeaders.style.display = "none";
+  } else if (event.target == popUpPlayerName) {
+    popUpPlayerName.style.display = "none";
+  }
+}
 
+//DISPLAY ADD-NAME FORM
+let addNameButton = document.querySelector(".add-name-button");
+const popUpPlayerName = document.querySelector('.pop-up-player-name');
+addNameButton.addEventListener("click", function () {
+    popUpPlayerName.style.display = "block";
+})
 
-
-
-
-///
-//playerName, moves, misses, accuracy, gameOutcome
-
-// squareEls.forEach(squareEl => {
-    //     squareEl.style.visibility = 'visible';
-    //     squareEl.textContent = '';
-// });
-    
-// squareEls.forEach(squareEl => {
-    //     squareEl.style.visibility = 'visible';
-    //     squareEl.textContent = '';
-    // });
-
-
-//THIS WIN MESSAGE WORKS
-// function winMessage() { 
-//     boardEl.style.display = 'flex';
-//     boardEl.classList.toggle('hidden');
-    // boardEl.classList.add('winning-message');
-//     boardEl.textContent = "You Won!";
-
-// }   
-
-// playAgainBtnEl.addEventListener('click', function () {
-//     boardEl.textContent = ''; 
-//     boardEl.style.display = 'grid';
-//     boardEl.classList.toggle('hidden');
-//     squareEls.forEach(squareEl => {
-//         squareEl.style.visibility = 'visible';
-//         squareEl.textContent = ''; 
-//     });
-//     startGame(); 
-// });
-
-    // boardEl.style.justifyContent = 'center';
-    // boardEl.style.alignItems = 'center';
-    // boardEl.style.fontSize = '60px';
-    // boardEl.style.height = '450px';
-    // boardEl.style.width = '700px';
-
-
-
-// squareEls.forEach(function (squareEl) {
-    // squareEl.style.display = 'none'
-    // })
-
-// playAgainBtnEl.addEventListener('click', function () {
-//     boardEl.textContent = ''; 
-//     squareEls.forEach(squareEl => {
-//         squareEl.style.display = 'flex';
-//         squareEl.style.visibility = 'visible';
-//         squareEl.textContent = ''; 
-//     });
-//     startGame(); 
-// });
-
-//THIS IS AN OPTION, BUT IT TAKES AWAY THE VISIBILITY
-// squareEls[index1].style.display = 'none';
-// squareEls[index2].style.display = 'none';
-
-// playAgainBtnEl.addEventListener('click', startGame);
-
-// boardEl.classList.add('winning-message');
-
-// boardEl.style.display = 'none'
-
-// squareEl.remove();
-// squareEls[index1].remove();
-// squareEls[index2].remove();
-
-
-// squaresMatch(content1, content2);
-// function squaresMatch(square1, square2) {
-//     if (square1 === square2) {
-//         matchedPairs++
-//     } else {
-//         setTimeout(() => {
-//             squareEls[index1].textContent = '';
-//             squareEls[index2].textContent = '';
-//         }, 1000);
-//     }
-// }
-
-
-// squareEls[index1].style.backgroundColor = "white";
-//                 squareEls[index2].style.backgroundColor = "white";
-//                 squareEls[index1].remove()
-//                 boardEl.removeChild(squareEls[index1]);
-//                 boardEl.remove(squareEls[index2]);
+//CLOSE ADD-NAME FORM
+let closeAddNameButton = document.querySelector(".close-new-player");
+closeAddNameButton.addEventListener("click", function () {
+    popUpPlayerName.style.display = "none";
+})

@@ -9,45 +9,56 @@
 </head>
 <body>
     <h1>Memory Card Sports Game</h1>
-    <div class="game">
-        <div class="left-side">
-            <div class="leadership-board">
-                <div class="leadership-title">Leadership Board</div>
-                <div class="leadership-container"></div>
+    <main id="board" class="grid-board">
+    </main>
+    <div class="pop-up-leaders">
+        <div class="leadership-board">
+            <span class="close">&times;</span>
+            <div class="leadership-title">Leadership Board</div>
+            <div class="leadership-properties">
+                <div>Name</div>
+                <div>Moves</div>
+                <div>Misses</div>
+                <div>Accuracy</div>
+                <div>Outcome</div>
+            </div>
+            <div class="leadership-container"></div>
+        </div>
+    </div>
+    <div class="pop-up-player-name">
+        <form class="new-player-name">
+            <span class="close-new-player">&times;</span>
+            <legend>New Player</legend>
+            <label for="player-input">Name:</label>
+            <input type="text" id="player-input" required></input>
+            <input type="submit" value="Add Name">
+        </form>
+    </div>
+    <div class="results">
+        <div class="top-results">
+            <div class="player-name-display">
+                <div class="p-name-title">Name:</div>
+                <div id="p-name"></div>
+            </div>
+            <div class="moves">
+                <div id="moves-text">Moves</div>
+                <div id="moves-num">0</div>
+            </div>
+            <div class="misses">
+                <div id="misses-text">Misses</div>
+                <div id="misses-num">0</div>
+            </div>
+            <div class="accuracy">
+                <div id="accuracy-text">Accuracy</div>
+                <div id="accuracy-num">0</div>
             </div>
         </div>
-        <div class="right-side">
-            <main id="board" class="grid-board">
-            </main>
-            <div class="results">
-                <div class="top-results">
-                    <div class="moves">
-                        <div id="moves-num">0</div>
-                        <div id="moves-text">Moves</div>
-                    </div>
-                    <div class="misses">
-                        <div id="misses-num">0</div>
-                        <div id="misses-text">Misses</div>
-                    </div>
-                    <div class="accuracy">
-                        <div id="accuracy-num">0</div>
-                        <div id="accuracy-text">Accuracy</div>
-                    </div>
-                    <div class="form-player-name">
-                        <form class="new-player-name">
-                            <label for="player-input">Name:</label>
-                            <input type="text" id="player-input" required></input>
-                            <input type="submit" value="Add Name">
-                            <!-- <button id="submit-name" type="submit">submit name</button> -->
-                        </form>
-                    </div>
-                </div>
-                <div class="bottom-results">
-                    <button class="play-again-button">Play Again</button>
-                    <div class="player-name-display"></div>
-                </div>
-            </div>
+        <div class="bottom-results">
+            <button class="add-name-button">Add Name</button>
+            <button class="play-again-button">Play Again</button>
+            <button class="leadership-button">Leaders</button>
         </div>
     </div>
 </body>
 </html>
+

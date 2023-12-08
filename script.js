@@ -14,7 +14,7 @@ const movesEl = document.querySelector('#moves-num');
 const missesEl = document.querySelector('#misses-num');
 const accuracyEl = document.querySelector('#accuracy-num');
 const playAgainBtnEl = document.querySelector('.play-again-button')
-const playerInputEl = document.querySelector('#player-input');//New Line
+const playerInputEl = document.querySelector('#player-input');
 const playerDisplayEl = document.querySelector('#p-name'); 
 
 let randomlyPopulatedArray;
@@ -129,7 +129,7 @@ function shuffleArray(array) {
 }
 
 function checkWin() {
-    if (misses === 2) {
+    if (misses === 10) {
         gameFinish = true;
         checkAccuracy();
         lossMessage();
@@ -197,7 +197,7 @@ function storeData() {
     localStorage.setItem(`finalArray`, JSON.stringify(finalArray));
 }
 
-//RESTORE FINAL FROM LOCAL STORAGE WHEN PAGE REFRESHED
+//RESTORE FINAL ARRAY FROM LOCAL STORAGE WHEN PAGE REFRESHED
 function restoreData() {
     if (!localStorage.finalArray) {
         displayLeaders();
@@ -263,7 +263,7 @@ popUpButton.addEventListener("click", function () {
     popUpLeaders.style.display = "none";
 })
 
-//CLOSE LEADERSHIP BOARD OR ADD NAME FORM WITH CLICK OUTSIDE OF MODAL
+//CLOSE LEADERSHIP BOARD OR ADD-NAME FORM WITH CLICK OUTSIDE OF MODAL
 window.onclick = function(event) {
   if (event.target == popUpLeaders) {
     popUpLeaders.style.display = "none";
@@ -272,140 +272,15 @@ window.onclick = function(event) {
   }
 }
 
-//DISPLAY ADD NAME FORM
+//DISPLAY ADD-NAME FORM
 let addNameButton = document.querySelector(".add-name-button");
 const popUpPlayerName = document.querySelector('.pop-up-player-name');
 addNameButton.addEventListener("click", function () {
     popUpPlayerName.style.display = "block";
 })
 
-//CLOSE ADD NAME FORM
+//CLOSE ADD-NAME FORM
 let closeAddNameButton = document.querySelector(".close-new-player");
 closeAddNameButton.addEventListener("click", function () {
     popUpPlayerName.style.display = "none";
 })
-
-
-
-
-
-// function displayLeaders() { 
-//     let resultsLeaders = document.querySelector(".leadership-container");
-//     resultsLeaders.innerHTML = "";
-//     for (let i = 0; i < finalArray.length; i++) {
-//         let player = finalArray[i];
-//         let playerResultsEl = document.createElement("div");
-//         playerResultsEl.setAttribute("class", "player-row");
-//         playerResultsEl.innerHTML = `
-//             <div>${player.name}</div>
-//             <div>${player.moves}</div>
-//             <div>${player.misses}</div>
-//             <div>${player.accuracy}%</div>
-//             <div>${player.gameOutcome}</div>`
-//         resultsLeaders.appendChild(playerResultsEl);
-//     }
-// }
-
-
-
-/*<span class="label">Name:</span>
-            <span class="value">${player.name}</span>
-            <span class="label">Moves:</span>
-            <span class="value">${player.moves}</span>
-            <span class="label">Misses:</span>
-            <span class="value">${player.misses}</span>
-            <span class="label">Accuracy:</span>
-            <span class="value">${player.accuracy}%</span>
-            <span class="label">Outcome:</span>
-            <span class="value">${player.gameOutcome}</span>*/
-
-
-///
-//playerName, moves, misses, accuracy, gameOutcome
-
-// squareEls.forEach(squareEl => {
-    //     squareEl.style.visibility = 'visible';
-    //     squareEl.textContent = '';
-// });
-    
-// squareEls.forEach(squareEl => {
-    //     squareEl.style.visibility = 'visible';
-    //     squareEl.textContent = '';
-    // });
-
-
-//THIS WIN MESSAGE WORKS
-// function winMessage() { 
-//     boardEl.style.display = 'flex';
-//     boardEl.classList.toggle('hidden');
-    // boardEl.classList.add('winning-message');
-//     boardEl.textContent = "You Won!";
-
-// }   
-
-// playAgainBtnEl.addEventListener('click', function () {
-//     boardEl.textContent = ''; 
-//     boardEl.style.display = 'grid';
-//     boardEl.classList.toggle('hidden');
-//     squareEls.forEach(squareEl => {
-//         squareEl.style.visibility = 'visible';
-//         squareEl.textContent = ''; 
-//     });
-//     startGame(); 
-// });
-
-    // boardEl.style.justifyContent = 'center';
-    // boardEl.style.alignItems = 'center';
-    // boardEl.style.fontSize = '60px';
-    // boardEl.style.height = '450px';
-    // boardEl.style.width = '700px';
-
-
-
-// squareEls.forEach(function (squareEl) {
-    // squareEl.style.display = 'none'
-    // })
-
-// playAgainBtnEl.addEventListener('click', function () {
-//     boardEl.textContent = ''; 
-//     squareEls.forEach(squareEl => {
-//         squareEl.style.display = 'flex';
-//         squareEl.style.visibility = 'visible';
-//         squareEl.textContent = ''; 
-//     });
-//     startGame(); 
-// });
-
-//THIS IS AN OPTION, BUT IT TAKES AWAY THE VISIBILITY
-// squareEls[index1].style.display = 'none';
-// squareEls[index2].style.display = 'none';
-
-// playAgainBtnEl.addEventListener('click', startGame);
-
-// boardEl.classList.add('winning-message');
-
-// boardEl.style.display = 'none'
-
-// squareEl.remove();
-// squareEls[index1].remove();
-// squareEls[index2].remove();
-
-
-// squaresMatch(content1, content2);
-// function squaresMatch(square1, square2) {
-//     if (square1 === square2) {
-//         matchedPairs++
-//     } else {
-//         setTimeout(() => {
-//             squareEls[index1].textContent = '';
-//             squareEls[index2].textContent = '';
-//         }, 1000);
-//     }
-// }
-
-
-// squareEls[index1].style.backgroundColor = "white";
-//                 squareEls[index2].style.backgroundColor = "white";
-//                 squareEls[index1].remove()
-//                 boardEl.removeChild(squareEls[index1]);
-//                 boardEl.remove(squareEls[index2]);

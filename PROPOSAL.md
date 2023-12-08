@@ -4,6 +4,7 @@ Memory Card Game
 
 
 PROJECT DESCRIPTION
+
 My app is called Memory Card.  It's a game for an individual who wants to play a memory card game online.  There are 12 cards on the screen.  One player chooses 2 cards, and if they match, they disappear.  If they don't match, the cards turn face down.  You win the game once you match all of the cards, and there are no cards left on the screen.  
 
 They game keeps track of how many moves you make.  One move is considered when you turn over 2 cards.   The game keeps track of how many misses you make.  Misses are considered when you turn over 2 cards and no matches occur.  After you win the game.  Your move accuracy is calculated.  The screen announces you Win.  And you there is a play again button.

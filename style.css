@@ -42,7 +42,7 @@ body {
     height: 130px;
     margin-top: 5px;
     border: 1px solid black;
-    padding-top: 10px;
+    padding-top: 15px;
     border-radius: 5px;
 }
 
@@ -51,7 +51,6 @@ body {
     flex-direction: row;
     justify-content: center;
     gap: 0px;
-    /* padding-left: 27px; */
 }
 
 .moves, .misses, .accuracy, .player-name-display {
@@ -64,19 +63,13 @@ body {
     height: 45px;
 }
 
+.p-name-title {
+    height: 23px;
+}
+
 #p-name {
     height: 22px;
 }
-
-.p-name-title {
-    height: 22px;
-}
-
-
-
-/* .player-name-display {
-    font-size: 20px;
-} */
 
 .bottom-results {
     display: flex;
@@ -176,8 +169,6 @@ body {
 }
 
 .leadership-properties {
-    /* display: flex;
-    flex-direction: row; */
     width: 600px;
     display: grid;
     grid-template-columns: repeat(5, 95px);
@@ -194,11 +185,9 @@ body {
     display: grid;
     grid-row-gap: 7px;
     padding-left: 50px;
-    /* grid-template-columns: repeat(5, 1fr);   */
 }
 
 .player-row {
-    /* display: flex; */
     display: grid;
     grid-template-columns: repeat(5, 95px); 
     flex-direction: row;
@@ -277,8 +266,6 @@ input[type="submit"]:hover{
     font-weight: bold;
 }
 
-
-
 .close-new-player {
     color: #aaa;
     float: right;
@@ -295,27 +282,3 @@ input[type="submit"]:hover{
     text-decoration: none;
     cursor: pointer;
 }
-
-
-
-/* .game {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .hidden {
-    display: none; */ 
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 70px;
-    height: 450px;
-    width: 700px;
-}
-
-/* position: absolute;
-    width: 100%;
-    height: 100%; */
-

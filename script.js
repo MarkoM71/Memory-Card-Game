@@ -24,12 +24,11 @@ let moves;
 let misses;
 let accuracy;
 let gameFinish;
-let playerName; // New line
+let playerName; 
 let leadershipArray = [];
 let finalArray = [];
 let gameOutcome;
 
-//CREATES PLAYER CLASS
 class Player{
     constructor(name, moves, misses, accuracy, gameOutcome) {
         this.name = name;
@@ -52,10 +51,8 @@ function startGame() {
     missesEl.textContent = '0';
     accuracyEl.textContent = '0%';
     playerName = playerInputEl.value;
-    playerDisplayEl.textContent = "Default";
-    // playerName = '';  
+    playerDisplayEl.textContent = "Your Name";
     
-
     boardEl.innerHTML = '';
 
     for (let i = 0; i < 12; i++) {
@@ -100,7 +97,6 @@ function startGame() {
                 }, 1250);
                 addMisses();
             }
-
             checkWin();
             selectedSquares = [];
         }
@@ -110,7 +106,6 @@ function startGame() {
 
 startGame();
 
-//ADD THE EVENT LISTENER HERE TO MAKE IT CLICK
 document.querySelector(".new-player-name").addEventListener("submit", function (event) {
     event.preventDefault();
     playerName = playerInputEl.value;
@@ -118,11 +113,7 @@ document.querySelector(".new-player-name").addEventListener("submit", function (
     let playerForm = document.querySelector(".new-player-name");
     playerForm.reset();
     popUpPlayerName.style.display = "none";
-    // console.log(playerName) WORKS HERE;
 })
- 
-// console.log(playerName) //DOESN'T WORK HERE
-// console.log(playerInput.value) THIS WORKS HERE.
 
 function addPlayerName(name) {
     playerDisplayEl.textContent = `${name}`;
@@ -194,7 +185,6 @@ playAgainBtnEl.addEventListener('click', function () {
     startGame(); 
 });
 
-//ADDING PLAYERS TO THE LEADERSHIP ARRAY
 function addToLeadershipArray() {
     let newPlayer = new Player(playerName, moves, misses, accuracy, gameOutcome);
     leadershipArray.push(newPlayer);
@@ -202,12 +192,12 @@ function addToLeadershipArray() {
     storeData();
 }
 
-//STORE LEADERSHIP ARRAY IN LOCAL STORAGE
+//STORE FINAL ARRAY IN LOCAL STORAGE
 function storeData() { 
     localStorage.setItem(`finalArray`, JSON.stringify(finalArray));
 }
 
-//RESTORE LEADERSHIP FROM LOCAL STORAGE WHEN PAGE REFRESHED
+//RESTORE FINAL FROM LOCAL STORAGE WHEN PAGE REFRESHED
 function restoreData() {
     if (!localStorage.finalArray) {
         displayLeaders();

@@ -25,7 +25,7 @@ RESULTS VIEW
 
 USER STORIES
 
--MVP GOALS
+MVP GOALS
 
 As a player, I want to be able to turn over 2 cards. And the computer to determine whether they match or not.
 As a player, I want the computer to remove cards if they match.  And to turn them facedown if they don't.
@@ -37,12 +37,14 @@ As a player, I want UI to look nice and be engaging.
 As a player, I want the computer to give me functionality to play again.  
 
 
--STRETCH GOALS
----As a player, I'd like a lose state, meaning if I don't get the matches in a certain amount of time.  I lose the game.
--As a player, I'd like to hear sounds when there a match is made like a ring.
--As a player, I'd like to see a victory animation such as confetti, so I feel good about my victory.  
--As a player, I'd like to see sounds when the card is clicked the cards over.
-As a player, I'd like to see card flip animation.
+STRETCH GOALS
+
+As a player, I'd like a lose state, meaning if I don't get the matches in a certain amount of time.  I lose the game.
+As a player, I'd to see functionality to input my name.
+As a player, I'd like to see a leadership board showing the highest scores.
+As a player, I'd like to see storage, so it stores the leadership board upon page refresh.
+As a player, I'd like to see modals to improve the UI.
+
 
 
 NOTIONBOARD TEMPLATE

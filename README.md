@@ -34,7 +34,7 @@ As a player, I want the computer to give me functionality to play again.
 
 -STRETCH GOALS
 
-As a player, I'd like a lose state, meaning if I don't get the matches in a certain amount of time.  I lose the game.
+As a player, I'd like a lose state, meaning if I make a certain amount of misses, I lose the game.
 As a player, I'd to see functionality to input my name.
 As a player, I'd like to see a leadership board showing the highest scores.
 As a player, I'd like to see storage, so it stores the leadership board upon page refresh.
@@ -49,7 +49,7 @@ I have met all my MVP and Stretch Goals.
 -TIMELINE
 
 Friday:
-Create and present proposal.  Create html, js, css files.
+Create and present proposal.  Create HTML, JS, CSS files.
 
 Saturday:
 Create basic scaffolding
